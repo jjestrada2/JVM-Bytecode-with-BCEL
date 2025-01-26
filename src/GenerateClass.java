@@ -19,7 +19,7 @@ public class GenerateClass {
         System.out.println("Generating Class");
 
         //Create a ClassGen for our brand new class.
-        ClassGen classGen=new ClassGen("out.synthetic.SyntheticClass", "java.lang.Object", "SyntheticClass.java", Constants.ACC_PUBLIC, null);
+        ClassGen classGen=new ClassGen("out.SyntheticClass", "java.lang.Object", "SyntheticClass.java", Constants.ACC_PUBLIC, null);
 
         //Get a reference to the constant pool of the class. This will be modified as we add methods, fields etc. Note that it already constains
         //a few constants.
@@ -62,14 +62,14 @@ public class GenerateClass {
         JavaClass javaClass=classGen.getJavaClass();
         try {
             //Write the class byte code into a file
-            javaClass.dump("out/synthetic/SyntheticClass.class");
+            javaClass.dump("out/SyntheticClass.class");
 
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
-        //That's it.
+
 
     }
 
